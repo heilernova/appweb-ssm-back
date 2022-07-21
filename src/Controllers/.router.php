@@ -14,8 +14,12 @@ router::use(function(){
 
 router::post( '/auth', fn() => require __DIR__ . '/auth.php' );
 
-router::use('/surveys', fn() => require __DIR__ . '/Surveys/.router.public.php' );
+router::use('/satisfaction-survey', fn() => require __DIR__ . '/Surveys/.router.public.php' );
 
 router::use( fn() => require __DIR__ . '/verify-token.php' );
 
-// router:
+router::use('/surveys', fn() => require __DIR__ . '/Surveys/.router.php');
+
+router::use('/sac', fn() => require __DIR__ . '/sac/.router.php');
+
+router::use('/persons', fn() => require __DIR__ . '/persons/.index.php');

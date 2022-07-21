@@ -8,11 +8,14 @@ create table `tb_users`
     `name` varchar(15) not null,
     `lastName` varchar(15) not null,
     `sex` char(1) not null,
+    `username` varchar(20) not null unique,
     `email` varchar(100) not null unique,
     `password` varchar(500) not null,
     `rule` tinyint not null,
     `disable` boolean not null
 );
+
+insert into `tb_users` values(default, default, '1006783343', 'DAYANNA', 'PINTO', 'F', 'ADMIN', 'DAYANAPINTO@GMAIL.COM','$2y$04$A8dGLVylvwo/0eLebRIam.jJ6xLqfrnMKay2m1xB7cmptEYAyGp9.', 1, 0);
 
 drop table if exists `tb_users_access`;
 create table `tb_users_access`
@@ -21,7 +24,7 @@ create table `tb_users_access`
     `date` datetime not null default current_timestamp,
     `user` int not null,
     `token` varchar(50) not null unique,
-    `device` int,
+    `device` int
 );
 
 drop table if exists `tb_eps`;
@@ -40,6 +43,20 @@ create table `tb_ips`
     `disable` boolean not null default false
 );
 
+drop table if exists `tb_dni_types`;
+create table `tb_dni_types`
+(
+    `id` varchar(5) primary key,
+    `text` varchar(50) not null
+);
+
+insert into `tb_dni_types` values
+('CC', 'Cédula de ciudadanía'),
+('TI', 'Tarjeta de identidad'),
+('RC', 'Registro civil'),
+('CE', 'Cédula de extranjería'),
+('PEP', 'PEP');
+
 drop table if exists `tb_persons`;
 create table `tb_persons`
 (
@@ -56,7 +73,7 @@ create table `tb_persons`
     `eps` int,
     `sisben` boolean,
     `regime` boolean,
-    `population` boolean
+    `population` char(1)
 );
 
 drop table if exists `tb_sac_cases_required_attentions`;
@@ -92,7 +109,7 @@ create table `tb_sac_cases`
     `reinserted` boolean, -- Reincertado
     `palenRaizal` boolean,
     `roomGintano` boolean,
-    `nnaNunaccompaniedAdult` boolean,
+    `nnaNunaccompaniedAdult` boolean
 );
 
 drop table if exists `tb_sac_cases_comments`;
@@ -109,7 +126,7 @@ create table `tb_sac_cases_comments`
 drop table if exists `tb_surveys`;
 create table `tb_surveys`
 (
-    'id' int primary key auto_increment,
+    `id` int primary key auto_increment,
     `date` datetime not null default current_timestamp,
     `type` varchar(20) not null,
     `user` int not null,

@@ -5,24 +5,30 @@
 
 use HNova\Db\Pull;
 use HNova\Rest\req;
+use HNova\Rest\res;
 
 $pull = new Pull();
 
 $username = req::body()->username;
 $password = req::body()->password;
 
+// return res::text(req::body())->status(500);
+
 $field = str_contains($username, '@') ? 'email' : 'username';
 
-$slq = "SELECT t1.*, COUNT(t2.id) AS 'access' FROM tb_users t1 LEFT JOIN tb_users_access t2 on t2.user = t1.id where $field = ?";
-
+$slq = "SELECT t1.*, (select count(*) from tb_users_access where user = t1.id ) AS 'access' FROM tb_users t1  where $field = ?";
+// return $slq;
 $user = $pull->query($slq, [ $username ])->rows()[0] ?? null;
+
+// return $user;
 
 if ( $user ){
 
-    if ( $user['disale'] == 1 ){
+    if ( $user['disable'] == 1 ){
         return [ 'message' => 'Tu usuario ya no tiene acceso al sistema' ];
     }
 
+    // return res::text(json_encode($user))->status(404);
     if ( $user['access'] == 3 ){
         // Eliminamos un acceso
         $sql = "SELECT id FROM tb_users_access WHERE user = ? order by device";
@@ -42,17 +48,17 @@ if ( $user ){
     }   
 
     $pull->insert([
-        'user' => $user->id,
+        'user' => $user['id'],
         'token' => $token,
         'device' => req::device()
-    ], 'tb_users_device');
+    ], 'tb_users_access');
 
     return [
         'access' => [
             'token' => $token,
             'user' => [
-                'name' => $user['name'],
-                'lastName' => $user['lastName'],
+                'name' => strtolower( $user['name'] ),
+                'lastName' => strtolower( $user['lastName'] ),
                 'rule' => $user['rule']
             ]
         ]
