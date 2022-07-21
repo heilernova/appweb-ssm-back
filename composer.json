@@ -1,0 +1,9 @@
+{
+    "require": {
+        "hnova/rest": "dev-main",
+        "hnova/db": "dev-main"
+    },
+    "scripts":{
+        "nv" : "HNova\\Rest\\Scripts\\script::execute"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "name": "My app",
+    "debug": true,
+    "developers": [],
+    "databases": {
+        "db": {
+            "type": "mysql",
+            "hostname": "localhost",
+            "username": "root",
+            "password": "",
+            "database": "ssm"
+        }
+    },
+    "routesConfig": {
+        "/": {
+            "cors": {
+                "origin": "*",
+                "methods": "*",
+                "allowedHeaders": "*"
+            }
+        }
+    }
+}
