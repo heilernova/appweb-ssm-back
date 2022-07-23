@@ -65,14 +65,14 @@ create table `tb_persons`
     `date` datetime not null default current_timestamp,
     `name` varchar(20) not null,
     `lastName` varchar(20) not null,
-    `cellphone` char(10),
+    `cellphones` json not null default '[]',
     `email` varchar(100),
     `sex` char(1),
     `birthDate` date,
     `address` varchar(100),
     `eps` int,
-    `sisben` boolean,
-    `regime` boolean,
+    `sisben` char(2),
+    `regime` char(1),
     `population` char(1)
 );
 
@@ -122,7 +122,7 @@ create table `tb_sac_cases_comments`
     `content` varchar(600) not null 
 );
 
-
+-- Tabla donde se guardan las respuestas de la encuestas
 drop table if exists `tb_surveys`;
 create table `tb_surveys`
 (
