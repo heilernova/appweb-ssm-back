@@ -10,7 +10,7 @@ class PersonsModel{
         
     }
 
-    public function dniValid(string $dni ): bool
+    public function dniExists(string $dni ): bool
     {
         return $this->pull->query("SELECT * FROM tb_persons WHERE dni = ?", [ $dni ])->rowCount > 0;
     }
@@ -20,8 +20,18 @@ class PersonsModel{
         return $row;
     }
 
-    public function create(array|object $data)
+    public function get(string $dni):?array{
+        $row = $this->pull->query("SELECT * FROM tb_persons WHERE dni = ?", [ $dni ])->rows()[0] ?? null;
+        return $row ? $this->map( $row ) : null;
+    }
+
+    public function create(array|object $data):?array
     {
-        return $this->pull->insert($data, 'tb_persons', '*')->rows()[0];
+        $row = $this->pull->insert($data, 'tb_persons', '*')->rows()[0] ?? null;
+        return $row ? $this->map( $row ) : null;
+    }
+
+    public function update(string $dni, $data):bool{
+        return $this->pull->update($data, [ 'dni=:dni',[ 'dni' => $dni] ], 'tb_persons')->rowCount > 0;
     }
 }

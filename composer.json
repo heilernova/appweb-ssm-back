@@ -3,6 +3,11 @@
         "hnova/rest": "dev-main",
         "hnova/db": "dev-main"
     },
+    "autoload":{
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
     "scripts":{
         "nv" : "HNova\\Rest\\Scripts\\script::execute"
     }

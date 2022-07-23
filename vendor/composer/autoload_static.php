@@ -12,6 +12,10 @@ class ComposerStaticInitccdfab6328249fc4394c5b966f8e8d0c
             'HNova\\Rest\\' => 11,
             'HNova\\Db\\' => 9,
         ),
+        'A' => 
+        array (
+            'App\\' => 4,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -22,6 +26,10 @@ class ComposerStaticInitccdfab6328249fc4394c5b966f8e8d0c
         'HNova\\Db\\' => 
         array (
             0 => __DIR__ . '/..' . '/hnova/db/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 

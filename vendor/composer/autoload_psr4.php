@@ -8,4 +8,5 @@ $baseDir = dirname($vendorDir);
 return array(
     'HNova\\Rest\\' => array($vendorDir . '/hnova/rest/src'),
     'HNova\\Db\\' => array($vendorDir . '/hnova/db/src'),
+    'App\\' => array($baseDir . '/src'),
 );
