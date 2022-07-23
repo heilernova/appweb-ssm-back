@@ -93,7 +93,7 @@ create table `tb_sac_cases`
     `dni` varchar(15) not null,
     `eps` int not null,
     `requiredAttention` int not null,
-    `note` varchar(400) not null,
+    `note` varchar(600) not null,
     `sisben` boolean,
     `regime` boolean,
     `olderAdult` boolean, -- Adulto mayor
@@ -119,7 +119,7 @@ create table `tb_sac_cases_comments`
     `date` datetime not null default current_timestamp,
     `user` int not null,
     `case` int not null,
-    `content` varchar(400) not null 
+    `content` varchar(600) not null 
 );
 
 
