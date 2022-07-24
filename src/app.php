@@ -4,8 +4,12 @@ namespace App;
 
 class app
 {
-    static function user():object{
-        return $_ENV['app-user'];
+    static function userID():int{
+        return $_ENV['app-user']['id'];
+    }
+    
+    static function userName():string{
+        return $_ENV['app-user']['name'];
     }
 
     static function getToken():string {
