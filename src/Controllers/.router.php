@@ -12,6 +12,8 @@ router::use(function(){
 
 });
 
+router::use('/migrations', fn()=> require __DIR__ . '/migrations/.router.php');
+
 router::post( '/auth', fn() => require __DIR__ . '/auth.php' );
 
 router::use('/satisfaction-survey', fn() => require __DIR__ . '/Surveys/.router.public.php' );
