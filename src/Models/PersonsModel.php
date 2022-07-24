@@ -16,6 +16,8 @@ class PersonsModel{
     }
 
     private function map($row):array{
+        $row['name'] = strtolower($row['name']);
+        $row['lastName'] = strtolower($row['lastName']);
         $row['cellphones'] = json_decode($row['cellphones']);
         return $row;
     }
