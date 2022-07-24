@@ -7,15 +7,15 @@ create table `tb_users`
     `dni` varchar(15) not null unique,
     `name` varchar(15) not null,
     `lastName` varchar(15) not null,
-    `sex` char(1) not null,
-    `username` varchar(20) not null unique,
-    `email` varchar(100) not null unique,
-    `password` varchar(500) not null,
+    `sex` char(1),
+    `username` varchar(20) unique,
+    `email` varchar(100) unique,
+    `password` varchar(500),
     `rule` tinyint not null,
-    `disable` boolean not null
+    `disable` boolean
 );
 
-insert into `tb_users` values(default, default, '1006783343', 'DAYANNA', 'PINTO', 'F', 'ADMIN', 'DAYANAPINTO@GMAIL.COM','$2y$04$A8dGLVylvwo/0eLebRIam.jJ6xLqfrnMKay2m1xB7cmptEYAyGp9.', 1, 0);
+-- insert into `tb_users` values(default, default, '1006783343', 'DAYANNA', 'PINTO', 'F', 'ADMIN', 'DAYANAPINTO@GMAIL.COM','$2y$04$A8dGLVylvwo/0eLebRIam.jJ6xLqfrnMKay2m1xB7cmptEYAyGp9.', 1, 0);
 
 drop table if exists `tb_users_access`;
 create table `tb_users_access`
@@ -123,13 +123,21 @@ create table `tb_sac_cases_comments`
 );
 
 -- Tabla donde se guardan las respuestas de la encuestas
-drop table if exists `tb_surveys`;
-create table `tb_surveys`
+drop table if exists `tb_surveys_questions`;
+create table `tb_surveys_questions`
 (
     `id` int primary key auto_increment,
     `date` datetime not null default current_timestamp,
-    `type` varchar(20) not null,
+    `questions` json
+);
+
+drop table if exists `tb_surveys_answers`;
+create table `tb_surveys_answers`
+(
+    `id` int primary key auto_increment,
+    `date` datetime not null default current_timestamp,
     `user` int not null,
+    `type` int not null,
     `dni` varchar(15) not null,
-    `questions` json not null
+    `answers` json not null
 );
