@@ -1,10 +1,4 @@
-<?php
-
-use HNova\Db\Pull;
-
-$pull = new Pull();
-
-$sql = "select 
+select 
 t1.id,
 t1.date,
 t1.`status`,
@@ -39,15 +33,4 @@ from tb_sac_cases t1
 inner join tb_persons t2 on t1.dni = t2.dni
 inner join tb_sac_cases_required_attentions t3 on t1.requiredAttention = t3.id
 inner join tb_users t4 on t4.id = t1.user
-group by t1.id";
-
-$rows = $pull->query($sql)->rows();
-
-$rows = array_map(function($row){
-    $row['user'] = json_decode( $row['user'] );
-    $row['comments'] = json_decode($row['comments']);
-    $row['cellphones'] = json_decode($row['cellphones']);
-    return $row;
-}, $rows);
-
-return $rows;
+group by t1.id

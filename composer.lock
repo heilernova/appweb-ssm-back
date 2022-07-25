@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/heilernova/hnova-db-php.git",
-                "reference": "024434a9f3530a8ee658b9508261f12947f3718c"
+                "reference": "7c67adc226d4fe18141fa9b9e1be1f72473bd521"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heilernova/hnova-db-php/zipball/024434a9f3530a8ee658b9508261f12947f3718c",
-                "reference": "024434a9f3530a8ee658b9508261f12947f3718c",
+                "url": "https://api.github.com/repos/heilernova/hnova-db-php/zipball/7c67adc226d4fe18141fa9b9e1be1f72473bd521",
+                "reference": "7c67adc226d4fe18141fa9b9e1be1f72473bd521",
                 "shasum": ""
             },
             "default-branch": true,
@@ -38,7 +38,7 @@
                 "issues": "https://github.com/heilernova/hnova-db-php/issues",
                 "source": "https://github.com/heilernova/hnova-db-php/tree/main"
             },
-            "time": "2022-07-20T18:01:28+00:00"
+            "time": "2022-07-25T15:14:48+00:00"
         },
         {
             "name": "hnova/rest",

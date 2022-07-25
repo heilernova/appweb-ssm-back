@@ -1,0 +1,29 @@
+[
+    {
+        "question" : "Nombre de la EPS",
+        "answer":{
+            "type": 1
+        }
+    },
+    {
+        "question": "¿Cuáles de las siguientes personas lo recibió?",
+        "answer":{
+            "type": 3,
+            "options": [
+                { "code": 1, "text": "Vigilante" },
+                { "code": 2, "text": "Promotor" },
+                { "code": 3, "text": "Recepcionista" }
+            ]
+        }
+    },
+    {
+        "question": "¿La atención de la persona que lo recibió fue amable y oportuna?",
+        "answer":{
+            "type": 2,
+            "options": [
+                { "code": "SI", "text": "Si" },
+                { "code": "NO", "text": "Si" }
+            ]
+        }
+    }
+]

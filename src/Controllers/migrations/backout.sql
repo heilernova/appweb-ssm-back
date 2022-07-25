@@ -176,6 +176,7 @@ VALUES
 ('1120578323', 'CC', '2022-07-18 22:03:14', 'LEONARDO ', 'LóPEZ TRIANA', 'leonardolopez2041@hotmail.com', 'M', '1995-09-13', 'Calle 6b no 28-50', NULL, 'NO', 'C', 'U', '[{"num":"3112347367","note":""}]'),
 ('1120578378', 'CC', '2022-05-28 14:51:48', 'YURY ', 'MARTíNEZ', '', 'F', '1995-09-26', 'CRA 19 f 22-42 Barrio la granja', NULL, 'SI', 'S', 'U', '[{"num":"3124592070","note":""}]'),
 ('1120578409', 'CC', '2022-07-23 16:41:20', 'ABIGAIL ', 'VELáSQUEZ ARANGO', '', 'F', '1995-09-28', '', NULL, 'SI', 'C', 'R', '[{"num":"3123390485","note":""}]'),
+('1120578855', 'CC', '2022-07-25 13:42:39', 'KAREN ELIANA ', 'MORERAS ALVAREZ', 'kjumi05@gmail.com', 'F', '1996-01-05', 'Km 3 via pto Arturo ', NULL, 'SI', 'C', 'R', '[{"num":"3222131756","note":""}]'),
 ('1120579119', 'CC', '2022-07-18 18:30:49', 'BRAYAN', 'CABALLERO', '', 'M', '1994-01-18', 'Las palmas', NULL, 'SI', 'S', 'U', '[{"num":"316852714","note":""}]'),
 ('112057922', 'CC', '2022-07-16 18:33:54', 'EDWIN ESTIVEN ', 'UZUGA CARMONA', '', 'M', '1996-04-03', 'Remanso', NULL, 'SI', 'S', 'U', '[{"num":"3187740197","note":""}]'),
 ('1120579382', 'CC', '2022-06-22 16:35:34', 'ANYELA PIEDAD', 'QUEVEDO VILLAMIL', 'anyelaquevedo47@gmail.com', 'F', '1996-04-15', 'Bicentenario II MZ D Casa 36', NULL, 'NO', 'C', 'U', '[{"num":"3222952717","note":""}]'),
@@ -326,6 +327,7 @@ VALUES
 ('2948070', 'CC', '2022-05-27 14:53:35', 'EDILSON ', 'DONATO LOPEZ', 'edilsondonato139@gmail.com', 'M', '1974-08-19', 'vereda simon bolivar - finca mata bambu', NULL, 'SI', 'S', 'R', '[{"num":"3143248196","note":""}]'),
 ('29620831', 'CC', '2022-04-19 13:34:05', 'MARIA LESVIA', 'QUICENO SOTO', '', 'F', NULL, 'cra 16Nº 11-10 B/porvenir', NULL, 'SI', 'S', 'U', '[{"num":"3148153902","note":""}]'),
 ('29815017', 'CC', '2022-07-23 16:33:57', 'NORA ELENA ', 'TORRES JARAMILLO ', '', 'F', '1967-12-17', '', NULL, 'SI', 'C', 'U', '[{"num":"3178115920","note":""}]'),
+('29898327', 'CC', '2022-07-25 14:15:16', 'MARIA ADALID ', 'GARCIA DE PINZóN', '', 'F', '1955-03-01', 'calle 11 # 18-42 Porvenir', NULL, 'SI', 'S', 'U', '[{"num":"3217089202","note":""}]'),
 ('29915743', 'CC', '2022-06-28 16:31:27', 'SANDRA PATRICIA ', 'ALZATE CARDONA ', '', 'F', '1972-12-10', 'Calle 18 # 26 139 barrio Santander ', NULL, 'SI', 'S', 'R', '[{"num":"3118572064","note":""}]'),
 ('30041185', 'CC', '2022-04-27 00:46:28', 'BERTINO', 'GOZALEZ', '', 'M', NULL, 'CALLE 10N 18 84', NULL, 'NO', 'C', 'U', '[{"num":"30041185","note":""}]'),
 ('30048224', 'CC', '2022-06-26 22:19:28', 'DIOCELINA ', 'PEREZ ', '', 'F', '1949-10-06', 'CALLE 8B n° 28B -40 PORTAL DE BELEN ', NULL, 'SI', 'S', 'U', '[{"num":"3112776975","note":""}]'),
@@ -1687,4 +1689,10 @@ VALUES
 ('2022-07-23 16:36:40', '1', '6', '29815017', '{"res01":"AUDIFARMA","res02":3,"res03":2,"res04":3,"res05":1,"res06":1,"res07":3,"res08":2,"res09":3}'),
 ('2022-07-23 16:39:10', '1', '4', '29815017', '{"res01":"NUEVA SALUD INTEGRAL","res02":3,"res03":3,"res04":3,"res05":20,"res06":3,"res07":3,"res08":1,"res09":1,"res10":3}'),
 ('2022-07-23 16:43:36', '1', '3', '1120578409', '{"res01":1,"res02":2,"res03":2,"res04":1,"res05":"1","res06":2,"res07":2,"res08":2,"res09":1,"res10":2}'),
-('2022-07-23 16:47:45', '1', '6', '21203170', '{"res01":"AUDIFARMA","res02":2,"res03":1,"res04":2,"res05":2,"res06":2,"res07":3,"res08":2,"res09":4}');
+('2022-07-23 16:47:45', '1', '6', '21203170', '{"res01":"AUDIFARMA","res02":2,"res03":1,"res04":2,"res05":2,"res06":2,"res07":3,"res08":2,"res09":4}'),
+('2022-07-25 13:43:12', '9', '1', '1120578855', '{"res01":"NUEVA EPS CONTRIBUTIVO","res02":"1","res03":1,"res04":2,"res05":2,"res06":2,"res07":3,"res08":2,"res09":3,"res10":3,"res11":1,"res12":3,"res12.01":1,"res12.02":2,"res13":2}'),
+('2022-07-25 13:43:41', '9', '2', '1120578855', '{"res01":"NUEVA SALUD INTEGRAL","res02":3,"res03":1,"res04":3,"res05":1,"res06":1,"res07":1,"res08":3,"res09":1,"res10":3}'),
+('2022-07-25 13:44:11', '9', '3', '1120578855', '{"res01":1,"res02":3,"res03":2,"res04":1,"res05":"1","res06":3,"res07":2,"res08":1,"res09":2,"res10":3}'),
+('2022-07-25 13:44:44', '9', '6', '1120578855', '{"res01":"AUDI FARMA","res02":3,"res03":2,"res04":3,"res05":2,"res06":2,"res07":3,"res08":2,"res09":4}'),
+('2022-07-25 13:45:12', '9', '4', '1120578855', '{"res01":"NUEVA SALUD INTEGRAL","res02":3,"res03":3,"res04":3,"res05":4,"res06":3,"res07":3,"res08":1,"res09":1,"res10":3}'),
+('2022-07-25 13:45:56', '9', '5', '1120578855', '{"res01":"NUEVA SALUD INTEGRAL","res02":1,"res03":3,"res04":1,"res05":1,"res06":3,"res07":3,"res08":3,"res09":3,"res10":3}');
