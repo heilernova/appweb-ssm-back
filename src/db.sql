@@ -128,8 +128,19 @@ create table `tb_surveys_questions`
 (
     `id` int primary key auto_increment,
     `date` datetime not null default current_timestamp,
+    `name` varchar(50) not null,
+    `icon` varchar(30) not null,
+    `description` varchar(400),
     `questions` json
 );
+insert into `tb_surveys_questions` values
+(1, default, 'EPS', 'apartment', '', '{}'),
+(2, default, 'IPS', 'business', '', '{}'),
+(3, default, 'Hospital', 'local_hospital', '', '{}'),
+(4, default, 'Farmacia', 'local_pharmacy', '', '{}'),
+(5, default, 'Laboratorio', 'vaccines', '', '{}'),
+(6, default, 'Medicina general', 'medication', '', '{}'),
+(7, default, 'Odontologia', 'biotech', '', '{}');
 
 drop table if exists `tb_surveys_answers`;
 create table `tb_surveys_answers`
