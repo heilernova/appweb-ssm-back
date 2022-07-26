@@ -25,7 +25,7 @@ $map = function($type, $rows):array{
         $data['answers'] = [];
     
         foreach ($row as $key => $value) {
-            $data['answers'][str_replace('ask', 'res', $key)] = $value;
+            $data['answers'][] = $value;
         }
     
         return $data;
@@ -112,9 +112,11 @@ $rows = array_map(function($row){
         5 => 'PyP',
         default => null
     };
-    $row['ask08'] = map_answer_okey_regular_bad( $row['asj08'] );
+    $row['ask08'] = map_answer_okey_regular_bad( $row['ask08'] );
     $row['ask09'] = map_answer_yes_no( $row['ask09'] );
     $row['ask10'] = map_answer_okey_regular_bad( $row['ask10'] );
+
+    // $row['ask10'] = 
 
     return $row;
 }, $db->query("SELECT * FROM tb_surveys_ips")->rows());
