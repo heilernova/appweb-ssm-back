@@ -65,7 +65,7 @@ return [
         question: "Luego realizar el examen del laboratorio, le entregaron  los resultados",
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('El mismo dia'),
+            question::newOption('El mismo día'),
             question::newOption('A los 2 días'),
             question::newOption('A los 5 días'),
             question::newOption('A los 8 días')
