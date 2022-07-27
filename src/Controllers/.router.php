@@ -20,7 +20,7 @@ router::post( '/auth', fn() => require __DIR__ . '/auth.php' );
 router::use('/satisfaction-survey', fn() => require __DIR__ . '/Surveys/public/.router.php' );
 
 # Rutas protegiadas
-router::use( fn() => require __DIR__ . '/verify-token.php' );
+// router::use( fn() => require __DIR__ . '/verify-token.php' );
 
 router::use('/surveys', fn() => require __DIR__ . '/Surveys/.router.php');
 
