@@ -1,7 +1,8 @@
 {
     "require": {
         "hnova/rest": "dev-main",
-        "hnova/db": "dev-main"
+        "hnova/db": "dev-main",
+        "phpoffice/phpspreadsheet": "^1.24"
     },
     "autoload":{
         "psr-4": {
