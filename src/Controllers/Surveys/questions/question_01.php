@@ -8,16 +8,20 @@ require_once __DIR__ . '/question.php';
 
 return [
     # 1
-    question::create('Nombre de la EPS', question::TYPE_INPUT),
+    question::create(
+        question: 'Nombre de la EPS', 
+        type: question::TYPE_INPUT,
+        style: ['text-transform' => 'uppercase']
+    ),
 
     # 2
     question::create(
         question:  '¿Cuáles de las siguientes personas lo recibió?',
         type: question::TYPE_RADIO_BUTTON_MAS,
         options: [
-            question::newOption('Vigilante'),
-            question::newOption('Promotor'),
-            question::newOption('Recepcionista')
+            question::newOption(1, 'Vigilante'),
+            question::newOption(2, 'Promotor'),
+            question::newOption(3, 'Recepcionista')
         ]
     ),
     
@@ -92,7 +96,7 @@ return [
         subquestions: [
             # 12.1
             question::create(
-                question: "xxxxx",
+                question: "Relaciones interpersonales",
                 type: question::TYPE_RADIO_BUTTON,
                 options: question::OPTIONS_SCORE_1_TO_5
             ),

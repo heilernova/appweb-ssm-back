@@ -29,11 +29,11 @@ return [
         question: "Cuando usted solicita una cita médica, le asignan la cita para",
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('1 día después'),
-            question::newOption('2 a 3 días después'),
-            question::newOption('4 a 5 días después'),
-            question::newOption('8 días después'),
-            question::newOption('Mas de 10 días despúes')
+            question::newOption(1, '1 día después'),
+            question::newOption(2, '2 a 3 días después'),
+            question::newOption(3, '4 a 5 días después'),
+            question::newOption(4, '8 días después'),
+            question::newOption(5, 'Mas de 10 días despúes')
         ]
     ),
 
@@ -42,10 +42,10 @@ return [
         question: "En el momento que la IPS le solicita el nombre de la EPS a la cual esta afiliado la reacción fue con",
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('Amabilidad'),
-            question::newOption('Normalidad'),
-            question::newOption('Indisposición'),
-            question::newOption('Apatía')
+            question::newOption(1, 'Amabilidad'),
+            question::newOption(2, 'Normalidad'),
+            question::newOption(3, 'Indisposición'),
+            question::newOption(4, 'Apatía')
         ]
     ),
 
@@ -54,11 +54,11 @@ return [
         question: "El tiempo de espera entre la hora de la cita asignada  y el momento  real de la atención fue",
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('Inmediata'),
-            question::newOption('10 minutos'),
-            question::newOption('15 minutos'),
-            question::newOption('20 minutos'),
-            question::newOption('Mas de 30 minutos')
+            question::newOption(1, 'Inmediata'),
+            question::newOption(2, '10 minutos'),
+            question::newOption(3, '15 minutos'),
+            question::newOption(4, '20 minutos'),
+            question::newOption(5, 'Mas de 30 minutos')
         ]
     ),
 
@@ -67,11 +67,11 @@ return [
         question: "Indique en cuales de los siguientes servicios fue atendido",
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('Medicina general'),
-            question::newOption('Farmacia'),
-            question::newOption('Laboratorío clínico'),
-            question::newOption('Odontología'),
-            question::newOption('PyP')
+            question::newOption(1, 'Medicina general'),
+            question::newOption(2, 'Farmacia'),
+            question::newOption(3, 'Laboratorío clínico'),
+            question::newOption(4, 'Odontología'),
+            question::newOption(5, 'PyP')
 
         ]
     ),

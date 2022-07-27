@@ -12,8 +12,8 @@ return [
         question: '¿Su ingreso al Hospital  fue por?',
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('Servicio de urquencias'),
-            question::newOption('Cirujía programada')
+            question::newOption(1, 'Servicio de urquencias'),
+            question::newOption(2, 'Cirujía programada')
         ]
     ),
 
@@ -22,9 +22,9 @@ return [
         question:  'Al ingresar al Hospital  fue atendido',
         type: question::TYPE_RADIO_BUTTON,
         options: [
-            question::newOption('Inmediatamente'),
-            question::newOption('Entre 20 a 40 minutos'),
-            question::newOption('Mas de 40 minutos')
+            question::newOption(1, 'Inmediatamente'),
+            question::newOption(2, 'Entre 20 a 40 minutos'),
+            question::newOption(3, 'Mas de 40 minutos')
         ]
     ),
     
@@ -45,10 +45,10 @@ return [
     # 5
     question::create(
         question: "Al registrarse le solicitaron la siguiente información",
-        type: question::TYPE_RADIO_BUTTON,
+        type: question::TYPE_RADIO_BUTTON_MAS,
         options: [
-            question::newOption('Documento de identificación'),
-            question::newOption('Autorización')
+            question::newOption(1, 'Documento de identificación'),
+            question::newOption(2, 'Autorización')
         ]
     ),
 
