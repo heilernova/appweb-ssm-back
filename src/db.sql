@@ -152,3 +152,77 @@ create table `tb_surveys_answers`
     `dni` varchar(15) not null,
     `answers` json not null
 );
+
+-- Vista del los casos Excel
+drop view if exists `vi_cases_excel`;
+create view `vi_cases_excel` as
+select 
+`t1`.`id` AS `id`,
+convert_tz(`t1`.`date`,'+00:00','-05:00') AS `date`,
+`t1`.`dni` AS `dni`,
+ucase(concat(`t2`.`name`,' ',`t2`.`lastName`)) AS `name`,
+`t2`.`sex` AS `sex`,
+`t2`.`cellphones` AS `cellphones`,
+`t2`.`birthDate` AS `birthDate`,
+if(`t2`.`birthDate` = NULL,0,timestampdiff(YEAR,`t2`.`birthDate`,current_timestamp())) AS `age`,
+ucase(`t2`.`address`) AS `address`,
+if(`t2`.`sisben` = 0,'NO','SI') AS `sisben`,
+if(`t3`.`id` = NULL,NULL,`t3`.`name`) AS `eps`,
+if(`t2`.`regime` = 0,'SUBSIDIADO','CONTRIBUTIVO') AS `regime`,
+if(`t2`.`population` = 'U','URBANA','RURAL') AS `population`,
+`t4`.`attention` AS `requiredAttention`,
+`t1`.`note` AS `note`,
+`t1`.`olderAdult` AS `olderAdult`,
+`t1`.`disabled` AS `disabled`,
+`t1`.`pregnant` AS `pregnant`,
+`t1`.`womenHeadHousehold` AS `womenHeadHousehold`,
+`t1`.`afrodescendent` AS `afrodescendent`,
+`t1`.`indigenous` AS `indigenous`,
+`t1`.`lgtbi` AS `lgtbi`,
+`t1`.`victim` AS `victim`,
+`t1`.`displaced` AS `displaced`,
+`t1`.`demobilized` AS `demobilized`,
+`t1`.`reinserted` AS `reinserted`,
+`t1`.`palenRaizal` AS `palenRaizal`,
+`t1`.`roomGintano` AS `roomGintano`,
+`t1`.`nnaNunaccompaniedAdult` AS `nnaNunaccompaniedAdult`,
+( 
+    select
+    if(count(tt1.id)=0,
+    '[]', 
+    JSON_ARRAYAGG(
+        JSON_OBJECT(
+            'id', tt1.id, 
+            'date', tt1.`date`,
+            'user', JSON_OBJECT(
+                'id', tt1.`user`,
+                'name', concat(tt2.name, ' ', tt2.lastName)
+            ), 
+            'content', tt1.`content`)
+        )
+    )
+    from tb_sac_cases_comments tt1
+    inner join tb_users tt2 on tt2.id = tt1.user
+    where tt1.`case`= t1.id
+) as comments
+from (((`tb_sac_cases` `t1` join `tb_persons` `t2` on(`t2`.`dni` = `t1`.`dni`)) join `tb_sac_cases_required_attentions` `t4` on(`t4`.`id` = `t1`.`requiredAttention`)) left join `tb_eps` `t3` on(`t3`.`id` = `t1`.`eps`)) order by `t1`.`id`;
+
+
+drop view if exists vi_surveys_excel;
+create view vi_surveys_excel as
+select 
+t1.id,
+convert_tz(`t1`.`date`,'+00:00','-05:00') AS `date`,
+t2.name as 'interviewer',
+t1.dni,
+t3.dniType,
+concat(t3.name, ' ', t3.lastName) as 'name',
+t3.sex,
+if(`t3`.`birthDate` = NULL,0,timestampdiff(YEAR,`t3`.`birthDate`,current_timestamp())) AS `age`,
+t3.cellphones,
+t3.address,
+t1.answers
+from tb_surveys_answers t1
+inner join tb_users t2 on t2.id = t1.user
+inner join tb_persons t3 on t3.dni = t1.dni
+order by t1.id;

@@ -32,7 +32,14 @@ return [
     question::create(
         question: "Cuáles de las siguientes personas lo recibió",
         type: question::TYPE_RADIO_BUTTON,
-        options: question::OPTIONS_YES_NO
+        options: [
+            question::newOption(1, 'Vigilante'),
+            question::newOption(2, 'Auxiliar'),
+            question::newOption(3, 'Recepcionista'),
+            question::newOption(4, 'Médico'),
+            question::newOption(5, 'Enfermero'),
+            question::newOption(6, 'Nadie me recibio')
+        ]
     ),
 
     # 4

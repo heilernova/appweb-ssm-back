@@ -74,4 +74,4 @@ foreach ($list as $row){
 $write = new Xlsx($spread_sheet);
 $write->save(__DIR__ . '/temp.xlsx');
 
-return res::file( __DIR__ . '/temp.xlsx' );
+return res::file( __DIR__ . '/temp.xlsx', true );
