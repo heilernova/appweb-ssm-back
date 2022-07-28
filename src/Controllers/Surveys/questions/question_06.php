@@ -10,7 +10,8 @@ return [
     # 1
     question::create(
         question: 'Nombre de la IPS',
-        type: question::TYPE_INPUT
+        type: question::TYPE_INPUT,
+        style: ['text-transform' => 'uppercase']
     ),
 
     # 2

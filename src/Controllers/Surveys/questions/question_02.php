@@ -8,7 +8,7 @@ require_once __DIR__ . '/question.php';
 
 return [
     # 1
-    question::create('Nombre de la IPS', question::TYPE_INPUT),
+    question::create('Nombre de la IPS', question::TYPE_INPUT, style: ['text-transform' => 'uppercase']),
 
     # 2
     question::create(
