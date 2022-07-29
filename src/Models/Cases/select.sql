@@ -34,3 +34,4 @@ inner join tb_persons t2 on t1.dni = t2.dni
 inner join tb_sac_cases_required_attentions t3 on t1.requiredAttention = t3.id
 inner join tb_users t4 on t4.id = t1.user
 group by t1.id
+order by t1.id DESC

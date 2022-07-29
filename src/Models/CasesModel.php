@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\app;
 use HNova\Db\Pull;
+use HNova\Rest\api;
 
 class CasesModel{
     
@@ -19,6 +20,15 @@ class CasesModel{
         $row['user'] = json_decode( $row['user'] );
         $row['comments'] = json_decode($row['comments']);
         $row['cellphones'] = json_decode($row['cellphones']);
+
+        # Agregamos los files si los tiene
+        $row['files'] = [];
+        $dir = $_ENV['api-rest-dir'] . "/../files/cases/" . str_pad($row['id'], 5, '0', STR_PAD_LEFT);
+
+        if ( file_exists($dir) ){
+            $row['files'] = array_map(fn($x) => basename($x), glob("$dir/*") ?? []);
+        }
+
         return $row;
     }
 
