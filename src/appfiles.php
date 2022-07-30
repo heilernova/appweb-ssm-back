@@ -53,6 +53,8 @@ class appfiles
 
 
     static function casesSalve(int $case, string $path, $name):string|false {
+        if ( !file_exists( __DIR__ . '/../files' ) ) mkdir(__DIR__ . '/../files');
+        if ( !file_exists( __DIR__ . '/../files/cases' ) ) mkdir(__DIR__ . '/../files/cases');
 
         $dir = __DIR__ . '/../files/cases/' . str_pad($case, 5, '0', STR_PAD_LEFT);
 
