@@ -52,16 +52,17 @@ class appfiles
     }
 
 
-    static function casesSalve(int $case, string $path, $name):bool{
+    static function casesSalve(int $case, string $path, $name):string|false {
 
         $dir = __DIR__ . '/../files/cases/' . str_pad($case, 5, '0', STR_PAD_LEFT);
 
         if ( !file_exists($dir) ) mkdir($dir);
 
         if ( req::getMethod() == 'POST' ){
-            return move_uploaded_file($path, $dir . "/" . self::mapName( $name ) );
+            $name = self::mapName($name);
+            return move_uploaded_file($path, $dir . "/" . $name ) ? $name : false;
         }
-        return true;
+        return false;
     }
 
 }
