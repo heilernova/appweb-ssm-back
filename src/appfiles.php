@@ -67,4 +67,10 @@ class appfiles
         return false;
     }
 
+    static function deleteFileCase(int $case, $name):bool{
+        $dir = __DIR__ . '/../files/cases/' . str_pad($case, 5, '0', STR_PAD_LEFT) . "/$name";
+
+        return unlink($dir);
+    }
+
 }
