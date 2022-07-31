@@ -17,7 +17,8 @@ $case = $m->get($id);
 if ( $case ){
     $case['files'] = [];
     foreach ( req::files() as $file ){
-        appfiles::casesSalve($id, $file->tmpName,  $file->name);
+        $name = appfiles::casesSalve($id, $file->tmpName,  $file->name);
+        if ( $name ) $case['files'] = $name;
     }
     return $case;
 }else{

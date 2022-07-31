@@ -23,7 +23,7 @@ class CasesModel{
 
         # Agregamos los files si los tiene
         $row['files'] = [];
-        $dir = $_ENV['api-rest-dir'] . "/../files/cases/" . str_pad($row['id'], 5, '0', STR_PAD_LEFT);
+        $dir = $_ENV['api-rest-dir'] . "/files/cases/" . str_pad($row['id'], 5, '0', STR_PAD_LEFT);
 
         if ( file_exists($dir) ){
             $row['files'] = array_map(fn($x) => basename($x), glob("$dir/*") ?? []);

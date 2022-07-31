@@ -8,9 +8,9 @@ class appfiles
 
     private static function mapName($name):string{
 
-        $name = str_replace(' ', ' ', $name);
-        $name = str_replace(' - ', '__', $name);
-        $name = str_replace(' ', '_', $name);
+        // $name = str_replace(' ', ' ', $name);
+        // $name = str_replace(' - ', '__', $name);
+        // $name = str_replace(' ', '_', $name);
         $name = str_replace(
         array('Á', 'À', 'Â', 'Ä', 'á', 'à', 'ä', 'â', 'ª'),
         array('A', 'A', 'A', 'A', 'a', 'a', 'a', 'a', 'a'),
@@ -60,8 +60,8 @@ class appfiles
 
         if ( !file_exists($dir) ) mkdir($dir);
 
-        if ( req::getMethod() == 'POST' ){
-            $name = self::mapName($name);
+        if ( req::httpMethod() == 'POST' ){
+            // $name = self::mapName($name);
             return move_uploaded_file($path, $dir . "/" . $name ) ? $name : false;
         }
         return false;
@@ -71,6 +71,14 @@ class appfiles
         $dir = __DIR__ . '/../files/cases/' . str_pad($case, 5, '0', STR_PAD_LEFT) . "/$name";
 
         return unlink($dir);
+    }
+
+    static function renameFileCase(int $case, $name, $new_name){
+        $dir = __DIR__ . '/../files/cases/' . str_pad($case, 5, '0', STR_PAD_LEFT) . "/$name";
+        $dir_2 = __DIR__ . '/../files/cases/' . str_pad($case, 5, '0', STR_PAD_LEFT) . "/$new_name";
+
+        // pathinfo($name, PATHINFO_EXTENSION);
+        return rename($dir, $dir_2);
     }
 
 }

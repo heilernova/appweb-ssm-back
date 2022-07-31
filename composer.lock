@@ -97,12 +97,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/heilernova/hnova-rest-php.git",
-                "reference": "48b8f7099a96b25833ee95760f0da7110fc1a693"
+                "reference": "e755379b0b4dbdb075b02b09a2d47a4ac0285567"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heilernova/hnova-rest-php/zipball/48b8f7099a96b25833ee95760f0da7110fc1a693",
-                "reference": "48b8f7099a96b25833ee95760f0da7110fc1a693",
+                "url": "https://api.github.com/repos/heilernova/hnova-rest-php/zipball/e755379b0b4dbdb075b02b09a2d47a4ac0285567",
+                "reference": "e755379b0b4dbdb075b02b09a2d47a4ac0285567",
                 "shasum": ""
             },
             "require-dev": {
@@ -126,7 +126,7 @@
                 "issues": "https://github.com/heilernova/hnova-rest-php/issues",
                 "source": "https://github.com/heilernova/hnova-rest-php/tree/main"
             },
-            "time": "2022-07-28T16:46:22+00:00"
+            "time": "2022-07-31T04:39:14+00:00"
         },
         {
             "name": "maennchen/zipstream-php",

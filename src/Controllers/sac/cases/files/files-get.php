@@ -4,7 +4,9 @@ use HNova\Rest\req;
 use HNova\Rest\res;
 
 $case_id = req::params()->caseId;
-$name_file = req::params()->name;
+$name_file = str_replace('%20', ' ', req::params()->name );
+// // $name_file = urldecode(req::params()->name);
+// return res::text($name_file)->status(500);
 
 // return res::file(__DIR__ . '/cases-post.php');
 

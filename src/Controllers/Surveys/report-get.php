@@ -15,7 +15,7 @@ $report = [];
 $sql = "SELECT id, lower(CONCAT(name, ' ', lastName)) AS 'name' FROM tb_users";
 $pollster = db::pull()->query($sql)->rows();
 
-$answers = db::pull()->query("SELECT id, user, type FROM tb_surveys_answers")->rows();
+$answers = db::pull()->query("SELECT id, `date`, user, type FROM tb_surveys_answers")->rows();
 
 $report['pollster'] = $pollster;
 $report['answers'] = $answers;
