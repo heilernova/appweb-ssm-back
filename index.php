@@ -2,7 +2,8 @@
 
 require __DIR__ . '/vendor/autoload.php';
 
-use HNova\Rest\api;
+use HNova\Rest\apirest;
 
-api::use('/', fn() => require __DIR__ . '/src/Controllers/.router.php');
-api::run();
+$app = apirest::createServer();
+$app->use('/', fn() => require __DIR__ . '/src/Controllers/.router.php');
+$app->run();

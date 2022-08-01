@@ -2,12 +2,14 @@
 
 use HNova\Db\db;
 use HNova\Rest\api;
+use HNova\Rest\apirest;
 use HNova\Rest\root;
 use HNova\Rest\router;
 
 router::use(function(){
 
-    $pdo = api::getConfig()->databases->getPDO('db');
+    // $pdo = api::getConfig()->databases->getPDO('db');
+    $pdo = apirest::getEnvironment()->getDatabasePDO('db');
     db::setPDO($pdo);
 
 });
