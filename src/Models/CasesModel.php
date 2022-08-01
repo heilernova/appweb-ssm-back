@@ -17,9 +17,16 @@ class CasesModel{
     }
 
     private function map($row):array {
+        $row['date'] = $row['date'] . "z";
         $row['user'] = json_decode( $row['user'] );
         $row['comments'] = json_decode($row['comments']);
-        $row['cellphones'] = json_decode($row['cellphones']);
+        // $row['cellphones'] = json_decode($row['cellphones']);
+        $row['client'] = json_decode($row['client']);
+        $row['populationGroup'] = json_decode($row['populationGroup']);
+
+        foreach( $row['populationGroup'] as $key => $value ){
+            $row['populationGroup']->$key = (bool)$value;
+        }
 
         # Agregamos los files si los tiene
         $row['files'] = [];

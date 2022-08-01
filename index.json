@@ -9,6 +9,13 @@
             "username": "root",
             "password": "",
             "database": "ssm"
+        },
+        "db1": {
+            "type": "mysql",
+            "hostname": "sql549.main-hosting.eu",
+            "username": "u204056831_ssm_v2",
+            "password": "=YP;sOhE4p",
+            "database": "u204056831_ssm_v2"
         }
     },
     "routesConfig": {

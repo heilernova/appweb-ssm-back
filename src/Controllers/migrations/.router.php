@@ -5,6 +5,86 @@ use HNova\Rest\api;
 use HNova\Rest\res;
 use HNova\Rest\router;
 
+router::get('/delete', function(){
+    $ids = [
+        385,
+        487,
+        657,
+        691,
+        692,
+        693,
+        694,
+        695,
+        696,
+        697,
+        698,
+        699,
+        700,
+        710,
+        723,
+        844,
+        910,
+        911,
+        926,
+        1086,
+        386,
+        478,
+        702,
+        703,
+        704,
+        705,
+        706,
+        707,
+        708,
+        0635,
+        636,
+        637,
+        638,
+        639,
+        804,
+        1051,
+        1108,
+        474,
+        760,
+        789,
+        812,
+        862,
+        863,
+        920,
+        922,
+        923,
+        935,
+        1017,
+        1054,
+        1055,
+        643,
+        644,
+        651,
+        792,
+        882,
+        891,
+        892,
+        893,
+        894,
+        964,
+    ];
+
+    $con = "";
+
+    foreach ( $ids as $id){
+        $con .= " or id=$id";
+    }
+    $con = ltrim($con, ' or');
+
+    $sql = "DELETE FROM tb_surveys_answers WHERE $con";
+    $del = db::pull()->query($sql)->rowCount;
+
+    return [
+        count($ids),
+        $del
+    ];
+});
+
 router::use(function(){
 
     // "dataConnection": {
@@ -62,7 +142,7 @@ router::get('/apply', function(){
     fputs($file, "$users\n\n$eps\n\n$ips\n\n$persons\n\n$attentions\n\n$cases\n\n$comments\n\n$surveys");
     fclose($file);
 
-    $pdo = api::getConfig()->databases->getPDO('db');
+    $pdo = api::getConfig()->databases->getPDO('db1');
     // db::setPDO($pdo);
 
     $pdo->query( file_get_contents(  __DIR__ . '/../../db.sql' ) );

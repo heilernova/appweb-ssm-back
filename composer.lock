@@ -63,12 +63,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/heilernova/hnova-db-php.git",
-                "reference": "7c67adc226d4fe18141fa9b9e1be1f72473bd521"
+                "reference": "647f2d001268234a9698ae2febab3247f9362cb7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heilernova/hnova-db-php/zipball/7c67adc226d4fe18141fa9b9e1be1f72473bd521",
-                "reference": "7c67adc226d4fe18141fa9b9e1be1f72473bd521",
+                "url": "https://api.github.com/repos/heilernova/hnova-db-php/zipball/647f2d001268234a9698ae2febab3247f9362cb7",
+                "reference": "647f2d001268234a9698ae2febab3247f9362cb7",
                 "shasum": ""
             },
             "default-branch": true,
@@ -89,7 +89,7 @@
                 "issues": "https://github.com/heilernova/hnova-db-php/issues",
                 "source": "https://github.com/heilernova/hnova-db-php/tree/main"
             },
-            "time": "2022-07-25T15:14:48+00:00"
+            "time": "2022-07-31T18:34:47+00:00"
         },
         {
             "name": "hnova/rest",
@@ -97,12 +97,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/heilernova/hnova-rest-php.git",
-                "reference": "e755379b0b4dbdb075b02b09a2d47a4ac0285567"
+                "reference": "15cc7bc248234405e646a7c791d51919399731ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/heilernova/hnova-rest-php/zipball/e755379b0b4dbdb075b02b09a2d47a4ac0285567",
-                "reference": "e755379b0b4dbdb075b02b09a2d47a4ac0285567",
+                "url": "https://api.github.com/repos/heilernova/hnova-rest-php/zipball/15cc7bc248234405e646a7c791d51919399731ba",
+                "reference": "15cc7bc248234405e646a7c791d51919399731ba",
                 "shasum": ""
             },
             "require-dev": {
@@ -126,7 +126,7 @@
                 "issues": "https://github.com/heilernova/hnova-rest-php/issues",
                 "source": "https://github.com/heilernova/hnova-rest-php/tree/main"
             },
-            "time": "2022-07-31T04:39:14+00:00"
+            "time": "2022-08-01T02:55:11+00:00"
         },
         {
             "name": "maennchen/zipstream-php",
