@@ -21,11 +21,11 @@ router::post( '/auth', fn() => require __DIR__ . '/auth.php' );
 # Rutas publicas
 router::use('/satisfaction-survey', fn() => require __DIR__ . '/Surveys/public/.router.php' );
 
+router::use('/persons', fn() => require __DIR__ . '/persons/.index.php');
+
 # Rutas protegiadas
 router::use( fn() => require __DIR__ . '/verify-token.php' );
 
 router::use('/surveys', fn() => require __DIR__ . '/Surveys/.router.php');
 
 router::use('/sac', fn() => require __DIR__ . '/sac/.router.php');
-
-router::use('/persons', fn() => require __DIR__ . '/persons/.index.php');
