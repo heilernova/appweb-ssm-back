@@ -14,7 +14,7 @@ $surveys = $pull->query("SELECT * FROM tb_surveys_questions")->rows();
 
 $surveys =  array_map(function($item){
     $id = $item['id'];
-    $dir = str_replace('00.php', str_pad("$id", 2, '0', STR_PAD_LEFT) . ".php", __DIR__ . './../questions/question_00.php');
+    $dir = str_replace('00.php', str_pad("$id", 2, '0', STR_PAD_LEFT) . ".php", __DIR__ . '/../questions/question_00.php');
 
     $item['questions'] = file_exists($dir) ? require $dir : [];
     return $item;
