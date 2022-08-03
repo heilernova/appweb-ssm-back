@@ -40,13 +40,13 @@ class CasesModel{
     }
 
     function getAll():array {
-        $rows = $this->db->query($this->slq_select)->rows();
+        $rows = $this->db->query("SELECT * FROM vi_cases")->rows();
         return array_map(fn($item) => $this->map($item), $rows);
     }
 
     function get(int $id):?array{
-        $sql = str_replace('group by t1.id', 'where t1.id = ? group by t1.id ', $this->slq_select);
-        $row = $this->db->query($sql, [ $id ])->rows()[0] ?? null;
+        // $sql = str_replace('group by t1.id', 'where t1.id = ? group by t1.id ', $this->slq_select);
+        $row = $this->db->query("SELECT * FROM vi_cases WHERE id = ?", [ $id ])->rows()[0] ?? null;
         return $row ? $this->map( $row ) : null;
     }
 
