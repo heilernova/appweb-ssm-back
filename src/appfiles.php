@@ -62,6 +62,7 @@ class appfiles
 
         if ( req::httpMethod() == 'POST' ){
             // $name = self::mapName($name);
+            $name = str_replace('.PDF', '.pdf', $name);
             return move_uploaded_file($path, $dir . "/" . $name ) ? $name : false;
         }
         return false;
