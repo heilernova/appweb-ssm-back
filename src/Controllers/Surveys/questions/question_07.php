@@ -56,28 +56,28 @@ return [
 
     # 7
     question::create(
-        question: "Califique la explicación  sobre exámenes  y tratamiento a seguir",
+        question: "Califique la explicación sobre exámenes y tratamiento a seguir",
         type: question::TYPE_RADIO_BUTTON,
         options: question::OPTIONS_OKEY_REGULAR_BAB
     ),
 
     # 8
     question::create(
-        question: "Califique su satisfacción con  la atención recibida por el profesional en consultorio",
+        question: "Califique la privacidad y comodidad del consultorio",
         type: question::TYPE_RADIO_BUTTON,
         options: question::OPTIONS_OKEY_REGULAR_BAB
     ),
 
     # 9
     question::create(
-        question: "Califique su satisfacción en general con la atención recibida en el servicio de medicina general",
+        question: "Califique su satisfacción con la atención recibida por el profesional en consultorio",
         type: question::TYPE_RADIO_BUTTON,
         options: question::OPTIONS_OKEY_REGULAR_BAB
     ),
 
     # 10
     question::create(
-        question: "Califique su satisfacción en general con la atención recibida en el servicio de odontología",
+        question: "Califique su satisfacción en general con la atención recibida en el servicio de odontologia",
         type: question::TYPE_RADIO_BUTTON,
         options: question::OPTIONS_OKEY_REGULAR_BAB
     )
