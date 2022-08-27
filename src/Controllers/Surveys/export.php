@@ -133,21 +133,21 @@ $rows = array_map(function($row){
                 default => $row['answers'][3]
             };
             # 07
-            $row['answers'][6] = match( $row['answers'][6] ){
-                1 => 'Si',
-                2 => 'No',
-                3 => 'No sabe',
-                default => null
-            };
+            // $row['answers'][6] = match( $row['answers'][6] ){
+            //     1 => 'Si',
+            //     2 => 'No',
+            //     3 => 'No sabe',
+            //     default => null
+            // };
 
             # 9
-            $row['answers'][8] = match( $row['answers'][8] ){
-                1 => '1 - 30 minutos',
-                2 => '30 - 60 minutos',
-                3 => 'Mas de 1 hora',
-                4 => 'Mas de 2 horas',
-                default => null
-            };
+            // $row['answers'][8] = match( $row['answers'][8] ){
+            //     1 => '1 - 30 minutos',
+            //     2 => '30 - 60 minutos',
+            //     3 => 'Mas de 1 hora',
+            //     4 => 'Mas de 2 horas',
+            //     default => null
+            // };
             break;
 
         case 5:
