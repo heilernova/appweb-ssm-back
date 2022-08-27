@@ -8,7 +8,7 @@ use HNova\Rest\Response;
 
 $m = new CasesModel();
 
-$body = json_decode( req::body()['json'] );
+$body = json_decode( req::body()->json );
 
 $id = $m->create((array)$body);
 
